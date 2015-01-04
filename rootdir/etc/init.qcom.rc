@@ -1276,6 +1276,9 @@ on property:init.svc.ril-daemon=running
 on property:ro.baseband=mdm
 	start mdm_helper
 
+on property:ro.baseband=mdm2
+	start mdm_helper
+
 # Start mdm_helper_proxy
 on property:ro.mdm_helper_proxy_req=true
     start mdm_helper_proxy
@@ -1632,3 +1635,10 @@ on property:service.bootanim.exit=1
     write /proc/sys/net/ipv6/conf/rmnet_usb1/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
+
+# MHI
+on property:sys.qseecomd.enable=true
+    start imsqmidaemon
+    insmod /system/lib/modules/adsprpc.ko
+    insmod /system/lib/modules/mhi.ko
+    write /dev/kmsg "insmod mhi.ko"
