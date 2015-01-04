@@ -1638,7 +1638,5 @@ on property:service.bootanim.exit=1
 
 # MHI
 on property:sys.qseecomd.enable=true
-    start imsqmidaemon
-    insmod /system/lib/modules/adsprpc.ko
     insmod /system/lib/modules/mhi.ko
     write /dev/kmsg "insmod mhi.ko"

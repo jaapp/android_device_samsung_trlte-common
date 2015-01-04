@@ -200,8 +200,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.sec.boot.sh \
-    ueventd.qcom.rc \
-    init.mdm.sh
+    ueventd.qcom.rc
 
 # Torch
 PRODUCT_PACKAGES += \
